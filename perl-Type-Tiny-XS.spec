@@ -4,7 +4,7 @@
 #
 Name     : perl-Type-Tiny-XS
 Version  : 0.014
-Release  : 5
+Release  : 6
 URL      : https://cpan.metacpan.org/authors/id/T/TO/TOBYINK/Type-Tiny-XS-0.014.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/T/TO/TOBYINK/Type-Tiny-XS-0.014.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libt/libtype-tiny-xs-perl/libtype-tiny-xs-perl_0.012-2.debian.tar.xz
