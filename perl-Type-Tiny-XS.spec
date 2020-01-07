@@ -4,14 +4,14 @@
 #
 Name     : perl-Type-Tiny-XS
 Version  : 0.016
-Release  : 11
+Release  : 12
 URL      : https://cpan.metacpan.org/authors/id/T/TO/TOBYINK/Type-Tiny-XS-0.016.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/T/TO/TOBYINK/Type-Tiny-XS-0.016.tar.gz
-Summary  : provides an XS boost for some of Type::Tiny's built-in type constraints
+Summary  : "provides an XS boost for some of Type::Tiny's built-in type constraints"
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
-Requires: perl-Type-Tiny-XS-lib = %{version}-%{release}
 Requires: perl-Type-Tiny-XS-license = %{version}-%{release}
+Requires: perl-Type-Tiny-XS-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 
 %description
@@ -22,22 +22,11 @@ type constraints
 %package dev
 Summary: dev components for the perl-Type-Tiny-XS package.
 Group: Development
-Requires: perl-Type-Tiny-XS-lib = %{version}-%{release}
 Provides: perl-Type-Tiny-XS-devel = %{version}-%{release}
-Requires: perl-Type-Tiny-XS = %{version}-%{release}
 Requires: perl-Type-Tiny-XS = %{version}-%{release}
 
 %description dev
 dev components for the perl-Type-Tiny-XS package.
-
-
-%package lib
-Summary: lib components for the perl-Type-Tiny-XS package.
-Group: Libraries
-Requires: perl-Type-Tiny-XS-license = %{version}-%{release}
-
-%description lib
-lib components for the perl-Type-Tiny-XS package.
 
 
 %package license
@@ -48,8 +37,18 @@ Group: Default
 license components for the perl-Type-Tiny-XS package.
 
 
+%package perl
+Summary: perl components for the perl-Type-Tiny-XS package.
+Group: Default
+Requires: perl-Type-Tiny-XS = %{version}-%{release}
+
+%description perl
+perl components for the perl-Type-Tiny-XS package.
+
+
 %prep
 %setup -q -n Type-Tiny-XS-0.016
+cd %{_builddir}/Type-Tiny-XS-0.016
 
 %build
 export http_proxy=http://127.0.0.1:9/
@@ -87,18 +86,18 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/Type/Tiny/XS.pm
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/Type/Tiny/XS/Util.pm
 
 %files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/Type::Tiny::XS.3
 /usr/share/man/man3/Type::Tiny::XS::Util.3
 
-%files lib
-%defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/auto/Type/Tiny/XS/XS.so
-
 %files license
 %defattr(0644,root,root,0755)
 /usr/share/package-licenses/perl-Type-Tiny-XS/529a6c89bb1ec1ab70f21730c345dcbda3871ed8
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/Type/Tiny/XS.pm
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/Type/Tiny/XS/Util.pm
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/auto/Type/Tiny/XS/XS.so
