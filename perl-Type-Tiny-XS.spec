@@ -4,7 +4,7 @@
 #
 Name     : perl-Type-Tiny-XS
 Version  : 0.022
-Release  : 18
+Release  : 19
 URL      : https://cpan.metacpan.org/authors/id/T/TO/TOBYINK/Type-Tiny-XS-0.022.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/T/TO/TOBYINK/Type-Tiny-XS-0.022.tar.gz
 Summary  : "provides an XS boost for some of Type::Tiny's built-in type constraints"
@@ -73,6 +73,7 @@ make TEST_VERBOSE=1 test
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/perl-Type-Tiny-XS
+cp %{_builddir}/Type-Tiny-XS-0.022/COPYRIGHT %{buildroot}/usr/share/package-licenses/perl-Type-Tiny-XS/6ca98375965d60b3c8e2b70ceab54454823abd73
 cp %{_builddir}/Type-Tiny-XS-0.022/LICENSE %{buildroot}/usr/share/package-licenses/perl-Type-Tiny-XS/fe949ecf1e34d3c41d26feec5553d225755faf79
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
@@ -94,10 +95,11 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files license
 %defattr(0644,root,root,0755)
+/usr/share/package-licenses/perl-Type-Tiny-XS/6ca98375965d60b3c8e2b70ceab54454823abd73
 /usr/share/package-licenses/perl-Type-Tiny-XS/fe949ecf1e34d3c41d26feec5553d225755faf79
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Type/Tiny/XS.pm
-/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Type/Tiny/XS/Util.pm
-/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/auto/Type/Tiny/XS/XS.so
+/usr/lib/perl5/vendor_perl/5.32.1/x86_64-linux-thread-multi/Type/Tiny/XS.pm
+/usr/lib/perl5/vendor_perl/5.32.1/x86_64-linux-thread-multi/Type/Tiny/XS/Util.pm
+/usr/lib/perl5/vendor_perl/5.32.1/x86_64-linux-thread-multi/auto/Type/Tiny/XS/XS.so
