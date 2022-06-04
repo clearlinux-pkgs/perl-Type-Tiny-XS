@@ -4,7 +4,7 @@
 #
 Name     : perl-Type-Tiny-XS
 Version  : 0.022
-Release  : 25
+Release  : 26
 URL      : https://cpan.metacpan.org/authors/id/T/TO/TOBYINK/Type-Tiny-XS-0.022.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/T/TO/TOBYINK/Type-Tiny-XS-0.022.tar.gz
 Summary  : "provides an XS boost for some of Type::Tiny's built-in type constraints"
@@ -100,6 +100,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Type/Tiny/XS.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Type/Tiny/XS/Util.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/auto/Type/Tiny/XS/XS.so
+/usr/lib/perl5/*
