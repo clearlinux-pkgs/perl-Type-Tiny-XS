@@ -4,7 +4,7 @@
 #
 Name     : perl-Type-Tiny-XS
 Version  : 0.025
-Release  : 28
+Release  : 29
 URL      : https://cpan.metacpan.org/authors/id/T/TO/TOBYINK/Type-Tiny-XS-0.025.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/T/TO/TOBYINK/Type-Tiny-XS-0.025.tar.gz
 Summary  : "provides an XS boost for some of Type::Tiny's built-in type constraints"
